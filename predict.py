@@ -44,7 +44,7 @@ class Predictor(cog.Predictor):
             output_path=str(out_path_midi),
             prompt=None,
         )
-        self.model.close()
+        #self.model.close()
 
         # compute soundfile from midi score
         self.fs.midi_to_audio(str(out_path_midi), str(out_path_wav))
