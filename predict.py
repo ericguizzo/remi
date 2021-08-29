@@ -30,7 +30,7 @@ class Predictor(cog.Predictor):
         """Generate midi and wav files"""
         if seed < 0:
             seed = int.from_bytes(os.urandom(2), "big")
-        tf.random.set_random_seed(seed)
+        tf.compat.v1.random.set_random_seed(seed)
 
         out_path = Path(tempfile.mkdtemp())
         out_path_midi = out_path / "output.midi"
